@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panels">
+   <div class="panel panel1">
+       <p>Happy</p>
+       <p>Let's</p>
+       <p>new year</p>
+   </div>
+   <div class="panel panel2">
+       <p>Be</p>
+       <p>Take</p>
+       <p>Happy</p>
+   </div>
+   <div class="panel panel3">
+       <p>Be</p>
+       <p>It</p>
+       <p>Healthy</p>
+   </div>
+   <div class="panel panel4">
+    <p>Have</p>
+    <p>All</p>
+    <p>Sucessful</p>
+</div>
+<div class="panel panel5">
+    <p>Year</p>
+    <p>In</p>
+    <p>2021</p>
+</div>
+
+
+
+    </div><!--end of panels-->
+    <script>
+        var panels = document.querySelectorAll(".panel")
+        function toggleOpen(){
+         
+            this.classList.toggle("open");
+
+        }
+
+        function toggleActive(e){
+            console.log(e.propertyName)
+            if(e.propertyName.includes("flex")){
+               this.classList.toggle("open-active")
+            }
+            
+
+        }
+
+        panels.forEach(function(panel){
+            panel.addEventListener("click", toggleOpen)
+        })
+
+        panels.forEach(panel=> panel.addEventListener("transitionend", toggleActive))
+    </script>
+</body>
+</html>
